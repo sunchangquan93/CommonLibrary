@@ -38,8 +38,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     testCompile 'junit:junit:4.12'
 }
-def siteUrl = 'https://github.com/sunchangquan93/QuanQuan' // 修改为你的项目的主页
-def gitUrl = 'https://github.com/sunchangquan93/QuanQuan.git' // 修改为你的Git仓库的url
+
+
+def siteUrl = 'https://github.com/sunchangquan93/JcenterDemo' // 修改为你的项目的主页
+def gitUrl = 'https://github.com/sunchangquan93/JcenterDemo.git' // 修改为你的Git仓库的url
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -58,9 +60,9 @@ install {
                 }
                 developers {
                     developer {
-                        id 'QuanQuan'    //填写的一些基本信息
-                        name 'QuanQuan'
-                        email 'changquan93@163.com'
+                        id 'quangod'    //填写的一些基本信息
+                        name 'quangod'
+                        email 'changquan1993@gmail.com'
                     }
                 }
                 scm {
@@ -101,8 +103,8 @@ bintray {
     configurations = ['archives']
     pkg {
         userOrg = "quangod"
-        repo = "QuanQuan"
-        name = "library"    //发布到JCenter上的项目名字
+        repo = "quanquan"
+        name = "qgodlibrary"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
