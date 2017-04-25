@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ChangquanSun
- * 2017/1/9
- * Activity管理类utils
+ *  Created by qGod on 2017/4/15
+ *  Thank you for watching my code
+ *  Activity管理类utils
  */
 
 public class ActivityManagerUtils {
@@ -47,7 +47,6 @@ public class ActivityManagerUtils {
                 }
             }
         }
-        System.exit(0);
     }
 
     public static Activity getActivity(String className){

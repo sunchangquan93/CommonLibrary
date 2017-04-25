@@ -11,11 +11,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 带日志文件输入的，又可控开关的日志调试
- * 
- * @author BaoHang
- * @version 1.0
- * @data 2012-2-20
+ *  Created by qGod on 2017/4/15
+ *  Thank you for watching my code
+ *  带日志文件输入的，又可控开关的日志调试
  */
 public class LogUtils
 {

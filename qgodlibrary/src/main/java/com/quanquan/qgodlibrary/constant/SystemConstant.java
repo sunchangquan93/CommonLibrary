@@ -1,8 +1,9 @@
 package com.quanquan.qgodlibrary.constant;
 
 /**
- * Created by ChangquanSun
- * 2016/12/26
+ * Created by qGod on 2017/4/15
+ * Thank you for watching my code
+ * 常量
  */
 
 public interface SystemConstant {

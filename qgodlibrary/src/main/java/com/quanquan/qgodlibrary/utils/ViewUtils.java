@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.WindowManager;
 
 /**
- * Created by ChangquanSun
- * 2017/1/1
+ * Created by qGod on 2017/4/15
+ * Thank you for watching my code
  * 获取屏幕属性工具类
  */
 
@@ -19,10 +19,6 @@ public class ViewUtils {
 
     /**
      * 将DP转换为PX
-     *
-     * @param context
-     * @param dp
-     * @return
      */
     public static int Dp2Px(Context context, float dp) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -31,10 +27,6 @@ public class ViewUtils {
 
     /**
      * PX转为DP
-     *
-     * @param context
-     * @param px
-     * @return
      */
     public static int Px2Dp(Context context, float px) {
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -43,10 +35,6 @@ public class ViewUtils {
 
     /**
      * sp转px
-     *
-     * @param context
-     * @param spVal
-     * @return
      */
     public static int sp2px(Context context, float spVal) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
@@ -55,10 +43,6 @@ public class ViewUtils {
 
     /**
      * px转sp
-     *
-     * @param context
-     * @param pxVal
-     * @return
      */
     public static float px2sp(Context context, float pxVal) {
         return (pxVal / context.getResources().getDisplayMetrics().scaledDensity);
@@ -76,9 +60,6 @@ public class ViewUtils {
 
     /**
      * 获取屏幕高度
-     *
-     * @param act
-     * @return
      */
     public static int getScreenHeight(Activity act) {
         WindowManager manager = act.getWindowManager();
@@ -89,9 +70,6 @@ public class ViewUtils {
 
     /**
      * 获得状态栏的高度
-     *
-     * @param context
-     * @return
      */
     public static int getStatusHeight(Context context) {
 
@@ -110,9 +88,6 @@ public class ViewUtils {
 
     /**
      * 获取当前屏幕截图，包含状态栏
-     *
-     * @param activity
-     * @return
      */
     public static Bitmap snapShotWithStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
@@ -130,9 +105,6 @@ public class ViewUtils {
 
     /**
      * 获取当前屏幕截图，不包含状态栏
-     *
-     * @param activity
-     * @return
      */
     public static Bitmap snapShotWithoutStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
@@ -158,6 +130,6 @@ public class ViewUtils {
     public static View getFocusView(Activity activity) {
         View rootview = activity.getWindow().getDecorView();
         View focusView = rootview.findFocus();
-        return  focusView;
+        return focusView;
     }
 }

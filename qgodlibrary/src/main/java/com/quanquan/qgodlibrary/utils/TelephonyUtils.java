@@ -36,8 +36,6 @@ public class TelephonyUtils {
 
     /**
      * 获取硬件信息
-     *
-     * @return
      */
     public static String getHardwareInfo() {
         String hardwareInfo = android.os.Build.MODEL;
@@ -65,9 +63,6 @@ public class TelephonyUtils {
 
     /**
      * 判断是否有网络连接
-     *
-     * @param context
-     * @return
      */
     public static boolean isNetworkConnected(Context context) {
         if (context != null) {
@@ -82,9 +77,6 @@ public class TelephonyUtils {
 
     /**
      * 判断WIFI网络是否可用
-     *
-     * @param context
-     * @return
      */
     public static boolean isWifiConnected(Context context) {
         if (context != null) {
@@ -99,9 +91,6 @@ public class TelephonyUtils {
 
     /**
      * 判断MOBILE网络是否可用
-     *
-     * @param context
-     * @return
      */
     public static boolean isMobileConnected(Context context) {
         if (context != null) {
@@ -116,9 +105,6 @@ public class TelephonyUtils {
 
     /**
      * 获取当前网络连接的类型信息
-     *
-     * @param context
-     * @return
      */
     public static int getConnectedType(Context context) {
         if (context != null) {
@@ -133,9 +119,6 @@ public class TelephonyUtils {
 
     /**
      * 获取当前的网络状态 ：没有网络0：WIFI网络1：3G网络2：2G网络3
-     *
-     * @param context
-     * @return
      */
     public static int getAPNType(Context context) {
         int netType = 0;
@@ -193,7 +176,6 @@ public class TelephonyUtils {
     }
     /**
      * 获取唯一设备号
-     * @param
      */
     public static String getDeviceId(Context aty) {
        StringBuffer sb=new StringBuffer();
@@ -222,13 +204,6 @@ public class TelephonyUtils {
     public static String getIME(Context context) {
         String szImei = "0000";
         try {
-//            if (Build.VERSION.SDK_INT >= 23) {
-//                if (ContextCompat.checkSelfPermission(aty, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-//                    {
-//                        ActivityCompat.requestPermissions(aty, new String[]{Manifest.permission.READ_PHONE_STATE}, 0);
-//                    }
-//                }
-//            }
             TelephonyManager TelephonyMgr = (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
             if (null!= TelephonyMgr.getDeviceId()) {
                 szImei = TelephonyMgr.getDeviceId();
@@ -256,11 +231,8 @@ public class TelephonyUtils {
         String m_szAndroidID = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ANDROID_ID);
         return m_szAndroidID;
     }
-
     /**
      * 获取当前时间
-     *
-     * @return yyyy-MM-dd hh:mm:ss
      */
     public static String getTime() {
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyMMddhhmmss");

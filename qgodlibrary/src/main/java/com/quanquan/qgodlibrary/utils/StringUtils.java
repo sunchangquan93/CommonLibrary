@@ -52,15 +52,6 @@ public class StringUtils {
 
     /**
      * 检查字符串是否是空白：<code>null</code>、空字符串<code>""</code>或只有空白字符。
-     * <p>
-     * <pre>
-     * StringUtil.isBlank(null)      = true
-     * StringUtil.isBlank("")        = true
-     * StringUtil.isBlank(" ")       = true
-     * StringUtil.isBlank("bob")     = false
-     * StringUtil.isBlank("  bob  ") = false
-     * </pre>
-     *
      * @param str 要检查的字符串
      * @return 如果为空白, 则返回<code>true</code>
      */
@@ -91,23 +82,6 @@ public class StringUtils {
     }
 
     /**
-     * 格式化数字返回整数型
-     *
-     * @param number
-     * @return int
-     */
-    public static int parseInt(String number) {
-        int intNumber = 0;
-        try {
-            intNumber = Integer.parseInt(number.trim());
-        } catch (NumberFormatException err) {
-            err.printStackTrace();
-        }
-
-        return intNumber;
-    }
-
-    /**
      * 设置editext只读属性
      */
     public static void setEditTextReadOnly(EditText view) {
@@ -120,7 +94,7 @@ public class StringUtils {
     /**
      * 判断字符串是否是整数
      */
-    public static boolean isInteger(String value) {
+    public static boolean stringIsInteger(String value) {
         try {
             Integer.parseInt(value);
             return true;
@@ -128,13 +102,8 @@ public class StringUtils {
             return false;
         }
     }
-
     /**
      * double 相加
-     *
-     * @param d1
-     * @param d2
-     * @return
      */
     public static double sum(double d1, double d2) {
         BigDecimal bd1 = new BigDecimal(Double.toString(d1));
@@ -144,10 +113,6 @@ public class StringUtils {
 
     /**
      * double 相减
-     *
-     * @param d1
-     * @param d2
-     * @return
      */
     public static double sub(double d1, double d2) {
         BigDecimal bd1 = new BigDecimal(Double.toString(d1));
@@ -157,10 +122,6 @@ public class StringUtils {
 
     /**
      * double 乘法
-     *
-     * @param d1
-     * @param d2
-     * @return
      */
     public static double mul(double d1, double d2) {
         BigDecimal bd1 = new BigDecimal(Double.toString(d1));
@@ -170,16 +131,10 @@ public class StringUtils {
 
     /**
      * double 除法
-     *
-     * @param d1
-     * @param d2
-     * @param scale 四舍五入 小数点位数
-     * @return
      */
     public static double div(double d1, double d2, int scale) {
         // 当然在此之前，你要判断分母是否为0，
         // 为0你可以根据实际需求做相应的处理
-
         BigDecimal bd1 = new BigDecimal(Double.toString(d1));
         BigDecimal bd2 = new BigDecimal(Double.toString(d2));
         return bd1.divide(bd2, scale, BigDecimal.ROUND_HALF_UP).doubleValue();
@@ -187,10 +142,6 @@ public class StringUtils {
 
     /**
      * 两个整数相除
-     *
-     * @param a
-     * @param b
-     * @return
      */
     public static int div(int a, int b) {
         int num = 0;
@@ -205,11 +156,41 @@ public class StringUtils {
         }
         return num;
     }
+    /**
+     * string 相加
+     */
+    public static float sum(String str1, String str2) {
+        BigDecimal bd1 = new BigDecimal(str1);
+        BigDecimal bd2 = new BigDecimal(str2);
+        return bd1.add(bd2).floatValue();
+    }
 
     /**
-     * 转换STRING成FLOAT
-     *
-     * @return
+     * string 相减
+     */
+    public static float sub(String d1, String d2) {
+        BigDecimal bd1 = new BigDecimal(d1);
+        BigDecimal bd2 = new BigDecimal(d2);
+        return bd1.subtract(bd2).floatValue();
+    }
+
+
+
+    /**
+     * string字符串转成int
+     */
+    public static int string2Int(String number) {
+        int intNumber = 0;
+        try {
+            intNumber = Integer.parseInt(number.trim());
+        } catch (NumberFormatException err) {
+            err.printStackTrace();
+        }
+        return intNumber;
+    }
+
+    /**
+     * string字符串转成float
      */
     public static float string2Float(String string) {
         float a = 0f;
@@ -222,33 +203,6 @@ public class StringUtils {
         }
         return a;
     }
-
-    /**
-     * string 相加
-     *
-     * @param str1
-     * @param str2
-     * @return
-     */
-    public static float sum(String str1, String str2) {
-        BigDecimal bd1 = new BigDecimal(str1);
-        BigDecimal bd2 = new BigDecimal(str2);
-        return bd1.add(bd2).floatValue();
-    }
-
-    /**
-     * string 相减
-     *
-     * @param d1
-     * @param d2
-     * @return
-     */
-    public static float sub(String d1, String d2) {
-        BigDecimal bd1 = new BigDecimal(d1);
-        BigDecimal bd2 = new BigDecimal(d2);
-        return bd1.subtract(bd2).floatValue();
-    }
-
 
     /**
      * 根据，拆分

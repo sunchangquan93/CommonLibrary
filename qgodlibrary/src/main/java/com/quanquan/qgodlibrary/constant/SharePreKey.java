@@ -1,9 +1,9 @@
 package com.quanquan.qgodlibrary.constant;
 
 /**
- * @des     sp的key值
- * @author  sunchangquan
- * @date    2017/1/9
+ * Created by qGod on 2017/4/15
+ * Thank you for watching my code
+ * key值管理
  */
 
 public interface SharePreKey {

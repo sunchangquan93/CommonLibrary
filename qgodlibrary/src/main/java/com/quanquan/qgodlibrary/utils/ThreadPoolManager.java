@@ -8,7 +8,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by ChangQuan.Sun on 2016/12/16.
+ *  Created by qGod on 2017/4/15
+ *  Thank you for watching my code
  */
 
 public class ThreadPoolManager {

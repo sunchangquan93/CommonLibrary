@@ -3,22 +3,22 @@ package com.quanquan.qgodlibrary.utils;
 import java.security.MessageDigest;
 
 /**
- * @author xiemeng
- * @des Md5加密
- * @date 2017/1/17
+ *  Created by qGod on 2017/4/15
+ *  Thank you for watching my code
+ *  MD5加密工具类
  */
 
 public class MD5Util {
 
     private static final String TAG = "MD5Util";
+
     /***
      * MD5加密 生成32位md5码
      *
      * @param inStr 待加密字符串
      * @return 返回32位md5码
      */
-    public static String md5EncodeDeviceId(String inStr)
-         {
+    public static String md5EncodeDeviceId(String inStr) {
         inStr = "0" + inStr;
         try {
             MessageDigest md5 = null;
@@ -35,7 +35,7 @@ public class MD5Util {
             }
             return hexValue.toString();
         } catch (Exception e) {
-            LogUtils.e(TAG,"md5EncodeDeviceId异常");
+            LogUtils.e(TAG, "md5EncodeDeviceId异常");
         }
         return inStr;
     }
