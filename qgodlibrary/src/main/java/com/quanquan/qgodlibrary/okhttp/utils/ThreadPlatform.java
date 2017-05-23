@@ -4,6 +4,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.quanquan.qgodlibrary.utils.LogUtils;
+
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -19,7 +21,7 @@ public class ThreadPlatform {
 
     public static ThreadPlatform get()
     {
-        L.e(PLATFORM.getClass().toString());
+        LogUtils.e("OkhttpManager",PLATFORM.getClass().toString());
         return PLATFORM;
     }
     private static ThreadPlatform findPlatform()

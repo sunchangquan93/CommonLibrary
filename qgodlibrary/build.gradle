@@ -66,8 +66,8 @@ dependencies {
 
 }
 
-def siteUrl = 'https://github.com/sunchangquan93/JcenterDemo' // 修改为你的项目的主页
-def gitUrl = 'https://github.com/sunchangquan93/JcenterDemo.git' // 修改为你的Git仓库的url
+def siteUrl = 'https://github.com/sunchangquan93/CommonLibrary' // 修改为你的项目的主页
+def gitUrl = 'https://github.com/sunchangquan93/CommonLibrary.git' // 修改为你的Git仓库的url
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -130,7 +130,7 @@ bintray {
     pkg {
         userOrg = "quangod"
         repo = "quanquan"
-        name = "qgodlibrary"    //发布到JCenter上的项目名字
+        name = "library"    //发布到JCenter上的项目名字
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]

@@ -4,17 +4,26 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.ui.ImageGridActivity;
+import com.quanquan.qgodlibrary.okhttp.callback.StringCallback;
+import com.quanquan.qgodlibrary.okhttp.manager.OkHttpManager;
+import com.quanquan.qgodlibrary.utils.LogUtils;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import okhttp3.Call;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -48,7 +57,52 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    @InjectView(R.id.textview)
+    TextView tvprogress;
+    @InjectView(R.id.textviewsum)
+    TextView tvSum;
+    @InjectView(R.id.progress)
+    ProgressBar progressbar;
 
+    public static final String URL_FORM_UPLOAD ="http://server.jeasonlzy.com/OkHttpUtils/upload";
+    @OnClick(R.id.btn_upload)
+    void onUpload(){
+        Map<String,String> params=new HashMap<>();
+        params.put("param1", "paramValue1");
+        params.put("param2", "paramValue2");
+
+        Map<String,File> files=new HashMap<>();
+        for (ImageItem imageItem : imageItems) {
+            File file=new File(imageItem.path);
+            files.put(imageItem.name,file);
+        }
+
+        OkHttpManager.post().url(URL_FORM_UPLOAD)
+                .addHeader("header1", "headerValue1")//
+                .addHeader("header2", "headerValue2")
+                .params(params)
+                .files("file",files)
+                .build().execute(new StringCallback() {
+            @Override
+            public void onError(Call call, Exception e) {
+
+            }
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(MainActivity.this, "上传成功", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void inProgress(float progress, long total) {
+                tvSum.setText("总大小"+(total/1024/1024)+"M");
+                LogUtils.e("sunchangquan","progress="+progress);
+                int pro=(int)(progress*100);
+                tvprogress.setText(pro+"%");
+                progressbar.setProgress(pro);
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -126,7 +126,6 @@ public class LogUtils
     /**
      * 打开日志文件并写入日志
      * 
-     * @return
      * **/
     private static void writeLogtoFile(String mylogtype, String tag, String text)
     {// 新建或打开日志文件
